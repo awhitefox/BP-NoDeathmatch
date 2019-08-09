@@ -67,7 +67,7 @@ namespace NoDeathmatch
                 || attackerFaction.CanDamage.Contains(playerFaction.Name)
                 || attackerFaction.CanDamage.Contains("*"))
             {
-                if (target.WillDieByDamage(amount))
+                if (target.WillDieByDamage(type, amount, collider))
                 {
                     if (target.player.wantedLevel >= Vars.MinTargetWantedLevelToIgnoreKillRules
                         || attackerFaction.CanKill.Contains(playerFaction.Name)
@@ -89,7 +89,23 @@ namespace NoDeathmatch
 
         private static void ShowMessageInChat(this SvPlayer player, string message) => player.Send(SvSendType.Self, Channel.Unsequenced, ClPacket.GameMessage, message);
 
-        private static bool WillDieByDamage(this SvPlayer player, float damage) => (player.player.health - damage) <= 0;
+        private static bool WillDieByDamage(this SvPlayer sv, DamageIndex type, float amount, Collider collider)
+        {
+            if (sv.player.IsDead() || sv.player.IsShielded(type, collider))
+                return false;
+
+            if (sv.player.IsBlocking(type))
+                amount *= 0.3f;
+            else if (collider == sv.player.headCollider)
+                amount *= 2f;
+
+            if (sv.serverside)
+                amount /= sv.svManager.settings.difficulty;
+
+            amount -= amount * (sv.player.armorLevel / sv.player.maxStat * 0.5f);
+
+            return sv.player.health - amount <= 0;
+        }
 
         #endregion
     }
