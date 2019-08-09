@@ -15,22 +15,15 @@
     along with BP-NoDeathmatch.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace NoDeathmatch
 {
-    [Serializable]
     public class Faction
     {
-        [JsonProperty]
         public string Name { get; set; }
-        [JsonProperty]
         public List<int> Jobs { get; set; } = new List<int>();
-        [JsonProperty]
         public List<string> CanDamage { get; set; } = new List<string>();
-        [JsonProperty]
         public List<string> CanKill { get; set; } = new List<string>();
     }
 }

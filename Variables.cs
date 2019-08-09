@@ -15,13 +15,10 @@
     along with BP-NoDeathmatch.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace NoDeathmatch
 {
-    [Serializable]
     public class Variables
     {
         public Variables()
@@ -49,20 +46,14 @@ namespace NoDeathmatch
             });
         }
 
-        [JsonProperty]
         public int MinTargetWantedLevelToIgnoreDamageRules = 1;
-        [JsonProperty]
         public int MinTargetWantedLevelToIgnoreKillRules = 2;
 
-        [JsonProperty]
         public bool IgnoreDamageToBots { get; set; } = false;
 
-        [JsonProperty]
         public string CantDamageMessage { get; set; } = "You can't damage people for no reason.";
-        [JsonProperty]
         public string CantKillMessage { get; set; } = "You can't kill people for no reason.";
 
-        [JsonProperty]
         public List<Faction> Factions { get; set; } = new List<Faction>();
     }
 }
