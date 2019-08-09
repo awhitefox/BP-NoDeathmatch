@@ -46,8 +46,8 @@ namespace NoDeathmatch
             });
         }
 
-        public int MinTargetWantedLevelToIgnoreDamageRules = 1;
-        public int MinTargetWantedLevelToIgnoreKillRules = 2;
+        public int MinTargetWantedLevelToIgnoreDamageRules { get; set; } = 1;
+        public int MinTargetWantedLevelToIgnoreKillRules { get; set; } = 2;
 
         public bool IgnoreDamageToBots { get; set; } = false;
 
