@@ -2,7 +2,7 @@
 
 A plugin to prevent players from RDM. 
 Using config file (inside "Plugins" folder) you can group jobs in factions and for each of them configure which factions they can kill and which they can only damage. 
-Also, you can configure minimum wanted level for ignoring killing and damaging rules (for example if a man has 2 or more starts everyone can kill him).
+Also, you can configure minimum wanted level for ignoring killing and damaging rules (for example if a man has 2 or more stars everyone can kill him).
 
 ## Installation
 
