@@ -21,7 +21,7 @@ using System.IO;
 using UnityEngine;
 using UniversalUnityHooks;
 
-namespace NoDeathmatch
+namespace BP_NoDeathmatch
 {
     public static class Hooks
     {

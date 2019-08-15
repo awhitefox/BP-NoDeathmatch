@@ -7,8 +7,8 @@
     <ProjectGuid>{CB8CC2F0-3734-4D00-8DAE-D39D5E284CD9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoDeathmatch</RootNamespace>
-    <AssemblyName>NoDeathmatch</AssemblyName>
+    <RootNamespace>BP_NoDeathmatch</RootNamespace>
+    <AssemblyName>BP_NoDeathmatch</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

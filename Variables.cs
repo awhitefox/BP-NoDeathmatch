@@ -17,7 +17,7 @@
 
 using System.Collections.Generic;
 
-namespace NoDeathmatch
+namespace BP_NoDeathmatch
 {
     public class Variables
     {
